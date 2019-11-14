@@ -8,11 +8,14 @@ Create a function which takes a ROT13 encoded string as input and outputs a deco
 
 All letters are uppercase. Don't transform any non-alphabetic characters like spaces or punctuation, but do pass them on to the output.
 */
+//mart code
 function hailCaesar(encryptedString) {
 //   don't fail Caesar!!! 
  var s="ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
   return encryptedString.replace(/[A-Z]/g,x=>s[s.lastIndexOf(x)-13]);
 }
+//2
+hailCaesar = encryptedString => encryptedString.replace(/([A-Z])/gi, m => String.fromCharCode((m.charCodeAt(0) - 52) % 26 + 65))
 //stupidcode
 
 function hailCaesar(encryptedString) {
