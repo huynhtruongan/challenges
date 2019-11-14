@@ -13,3 +13,48 @@ function hailCaesar(encryptedString) {
  var s="ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
   return encryptedString.replace(/[A-Z]/g,x=>s[s.lastIndexOf(x)-13]);
 }
+//stupidcode
+
+function hailCaesar(encryptedString) {
+//   don't fail Caesar!!! 
+  const letterArr = encryptedString.match(/[^\s]+/g);
+  // console.log(letterArr)
+  
+    let result = "";
+    letterArr.map((letter, index) => {
+      
+      for(let i = 0 ; i< letter.length; i++){
+        // console.log(letter.codePointAt(i))
+        const list =  [".","/",",","?","0","1","2","3","4","5","6","7","8","9","@","[","`","{"];
+        
+        let letterChanged ="";
+        let check = list.map(value => letter[i] !== value);
+
+         
+       
+        if(letter.codePointAt(i)+13 <= 90){
+
+            if(!check.includes(false)){
+                letterChanged = String.fromCodePoint(letter.codePointAt(i)+13);
+            }else{
+                letterChanged = letter[i];
+            }
+          result+= letterChanged; 
+        }else{
+          
+            if(!check.includes(false)){
+               letterChanged = String.fromCodePoint(letter.codePointAt(i)+13 - 90 + 65 - 1);
+            }else{
+               letterChanged = letter[i];
+            }
+             
+          result+= letterChanged;
+        } 
+       
+      }
+      if(index!=letterArr.length-1) result +=" ";
+  
+  })
+    return result;
+  
+}
