@@ -1,0 +1,33 @@
+.container {
+  width: 100%;
+  text-align: center;
+}
+.random-number-app {
+  display: inline-block;
+  margin: 30vh auto;
+  background-image: linear-gradient(
+    140deg,
+    #5be63f 0%,
+    #e2a32e 50%,
+    #d6cd41 75%
+  );
+}
+.random-number-app h1 {
+  font-family: 'Rampart One', cursive;
+}
+.random-number-app .random-number {
+  font-family: 'Teko', sans-serif;
+  background: -webkit-linear-gradient(rgb(67, 91, 226), rgb(27, 34, 44));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2rem;
+}
+.random-number-app hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: -webkit-linear-gradient(left, rgb(41, 180, 28), #333, #ccc);
+  background-image: -moz-linear-gradient(left, rgb(41, 180, 28), #333, #ccc);
+  background-image: -ms-linear-gradient(left, rgb(41, 180, 28), #333, #ccc);
+  background-image: -o-linear-gradient(left, rgb(41, 180, 28), #333, #ccc);
+}
